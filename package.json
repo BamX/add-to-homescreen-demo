@@ -1,0 +1,25 @@
+{
+  "name": "add-to-homescreen-demo",
+  "version": "1.0.0",
+  "description": "Demo site for 'Add To Homescreen' functionality",
+  "repository": "https://github.com/BamX/add-to-homescreen-demo.git",
+  "main": "server.js",
+  "scripts": {
+    "bower-install": "bower install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "add",
+    "homescreen",
+    "icon",
+    "demo"
+  ],
+  "author": "Nikolay Volosatov <bamx23@yandex-team.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "hapi": "^13.4.1",
+    "inert": "^4.0.0",
+    "path": "^0.12.7"
+  }
+}

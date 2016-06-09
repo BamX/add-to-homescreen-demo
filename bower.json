@@ -1,0 +1,27 @@
+{
+  "name": "add-to-homescreen-demo",
+  "description": "Demo site for 'Add To Homescreen' functionality",
+  "repository": "https://github.com/BamX/add-to-homescreen-demo.git",
+  "main": "server.js",
+  "authors": [
+    "Nikolay Volosatov <bamx23@yandex-team.ru>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "add",
+    "homescreen",
+    "icon",
+    "demo"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "add-to-homescreen": "https://github.com/cubiq/add-to-homescreen.git#64c056e1d87fef5bcde88a5ed1490629a62b4084"
+  }
+}

@@ -1,5 +1,5 @@
 FROM node:onbuild
 
-RUN npm bower-install
+RUN npm run bower-install
 
 EXPOSE 8000

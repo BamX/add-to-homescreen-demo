@@ -17,6 +17,7 @@
         <![endif]-->
 
         <link rel="stylesheet" type="text/css" href="/css/addtohomescreen.css">
+        <script src="/js/addtohomescreen.js"></script>
     </head>
     <body>
 
@@ -24,11 +25,12 @@
             <div class="row">
                 <h1>Add To Homescreen Demo</h1>
                 <p>This site is a demo for:</p>
-                <pre>https://github.com/cubiq/add-to-homescreen</pre>
+                <a href="https://github.com/cubiq/add-to-homescreen"><pre>https://github.com/cubiq/add-to-homescreen</pre></a>
             </div>
 
             <div class="row">
-                <a class="btn btn-lg btn-success" href="#" onclick="addToHomescreen();">Click me</a>
+                <a class="btn btn-lg btn-success" href="javascript:void(0);" onclick="clickSample();">Click me</a>
+                <p>Icon state: <span class="label label-info" id="icon-state">n/a</span></p>
             </div>
 
             <hr />
@@ -41,6 +43,23 @@
         <!-- JS stuff -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <script src="/js/addtohomescreen.js"></script>
+        <script type="text/javascript">
+            function iconAdded() {
+                $('#icon-state').html('added');
+            }
+            function popupShown() {
+                $('#icon-state').html('popup');
+            }
+            function clickSample() {
+                $('#icon-state').html('pending');
+                addToHomescreen({
+                    startDelay: 0,
+                    detectHomescreen: true,
+                    modal: true,
+                    onAdd: iconAdded,
+                    onShow: popupShown
+                });
+            }
+        </script>
     </body>
 </html>

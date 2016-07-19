@@ -5,8 +5,8 @@ const Path = require('path');
 
 const server = new Hapi.Server();
 server.connection({
-    host: '0.0.0.0',
-    port: 8000
+    host: process.env.HOST || "0.0.0.0",
+    port: process.env.PORT || "80"
 });
 
 server.register(require('inert'), (err) => {

@@ -1,5 +1,17 @@
-FROM node:onbuild
+FROM mhart/alpine-node:latest
 
-RUN npm run bower-install
+RUN mkdir /src
+WORKDIR /src
+COPY package.json /src/
+COPY bower.json /src/
 
-EXPOSE 8000
+RUN npm install \
+    && apk add --no-cache git \
+    && node_modules/.bin/bower install --allow-root \
+    && apk del git
+
+COPY . /src
+
+EXPOSE 80
+
+CMD [ "node", "server.js" ]
